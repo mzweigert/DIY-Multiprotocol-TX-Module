@@ -74,9 +74,9 @@
 //4-in-1 modules have the A7105, CYRF6936, CC2500 and NRF24L01 RF chips installed
 //5-in-1 modules have all RF chips installed
 //!!!If a RF chip is present it MUST be marked as installed!!! or weird things will happen you have been warned.
-#define A7105_INSTALLED
-#define CYRF6936_INSTALLED
-#define CC2500_INSTALLED
+//#define A7105_INSTALLED
+//#define CYRF6936_INSTALLED
+//#define CC2500_INSTALLED
 #define NRF24L01_INSTALLED
 //#define SX1276_INSTALLED		// only supported on STM32 modules
 
@@ -135,9 +135,9 @@
 //It can be activated when flying indoor or small models since the distance is short or if a model is causing issues when flying closed to the TX.
 //By default low power selection is enabled on all rf chips, but you can disable it by commenting (add //) the lines below if you don't want to risk
 //flying a model with low power.
-#define A7105_ENABLE_LOW_POWER
-#define CYRF6936_ENABLE_LOW_POWER
-#define CC2500_ENABLE_LOW_POWER
+//#define A7105_ENABLE_LOW_POWER
+//#define CYRF6936_ENABLE_LOW_POWER
+//#define CC2500_ENABLE_LOW_POWER
 #define NRF24L01_ENABLE_LOW_POWER
 
 
@@ -167,7 +167,7 @@
 //Comment the protocols you are not using with "//" to save Flash space.
 
 //The protocols below need an A7105 to be installed
-#define	AFHDS2A_A7105_INO
+/*#define	AFHDS2A_A7105_INO
 #define	AFHDS2A_RX_A7105_INO
 #define	BUGS_A7105_INO
 #define	FLYSKY_A7105_INO
@@ -175,19 +175,19 @@
 #define	HUBSAN_A7105_INO
 #define	KYOSHO_A7105_INO
 #define	PELIKAN_A7105_INO
-#define	WFLY2_A7105_INO
+#define	WFLY2_A7105_INO*/
 
 //The protocols below need a CYRF6936 to be installed
-#define	DEVO_CYRF6936_INO
+/*#define	DEVO_CYRF6936_INO
 #define	DSM_CYRF6936_INO
 #define	DSM_RX_CYRF6936_INO
 #define	J6PRO_CYRF6936_INO
 #define	TRAXXAS_CYRF6936_INO
 #define	WFLY_CYRF6936_INO
-#define	WK2x01_CYRF6936_INO
+#define	WK2x01_CYRF6936_INO*/
 
 //The protocols below need a CC2500 to be installed
-#define	CORONA_CC2500_INO
+/*#define	CORONA_CC2500_INO
 #define	E016HV2_CC2500_INO
 #define	ESKY150V2_CC2500_INO	//Need both CC2500 and NRF
 #define	FRSKYL_CC2500_INO
@@ -202,19 +202,19 @@
 #define	FUTABA_CC2500_INO
 #define	SKYARTEC_CC2500_INO
 #define	REDPINE_CC2500_INO
-#define	RLINK_CC2500_INO
+#define	RLINK_CC2500_INO*/
 
 //The protocols below need a NRF24L01 to be installed
-#define	ASSAN_NRF24L01_INO
+/*#define	ASSAN_NRF24L01_INO*/
 #define	BAYANG_NRF24L01_INO
 #define	BAYANG_RX_NRF24L01_INO
 #define	BUGSMINI_NRF24L01_INO
-#define	CABELL_NRF24L01_INO
+/*#define	CABELL_NRF24L01_INO
 #define	CFLIE_NRF24L01_INO
 #define	CG023_NRF24L01_INO
 #define	CX10_NRF24L01_INO		 //Include Q2X2 protocol
-#define	DM002_NRF24L01_INO
-#define	E01X_NRF24L01_INO
+#define	DM002_NRF24L01_INO*/
+/*#define	E01X_NRF24L01_INO
 #define	ESKY_NRF24L01_INO
 #define	ESKY150_NRF24L01_INO
 #define	FQ777_NRF24L01_INO
@@ -227,9 +227,9 @@
 #define	H8_3D_NRF24L01_INO
 #define	JJRC345_NRF24L01_INO
 #define	KF606_NRF24L01_INO
-#define	KN_NRF24L01_INO
+#define	KN_NRF24L01_INO*/
 #define	MJXQ_NRF24L01_INO
-#define	MT99XX_NRF24L01_INO
+/*#define	MT99XX_NRF24L01_INO
 #define	NCC1701_NRF24L01_INO
 #define	POTENSIC_NRF24L01_INO
 #define	PROPEL_NRF24L01_INO
@@ -245,10 +245,10 @@
 #define	V911S_NRF24L01_INO
 #define	XK_NRF24L01_INO
 #define	YD717_NRF24L01_INO
-#define	ZSX_NRF24L01_INO
+#define	ZSX_NRF24L01_INO*/
 
 //The protocols below need a SX1276 to be installed
-#define	FRSKYR9_SX1276_INO
+//#define	FRSKYR9_SX1276_INO
 
 /***************************/
 /*** PROTOCOLS SETTINGS  ***/
@@ -397,98 +397,28 @@
 // Full procedure is located here: https://github.com/pascallanger/DIY-Multiprotocol-TX-Module/blob/master/Protocols_Details.md#protocol-selection-in-ppm-mode
 
 //The parameter below indicates the number of desired banks between 1 and 5. Default is 1.
-#define NBR_BANKS 1
 
-const PPM_Parameters PPM_prot[14*NBR_BANKS]=	{
+
+#define NBR_BANKS 1
+#define NBR_MODES 3
+
+#define  BAYANG_NRF24L01_INO
+#define BAYANG_RX_NRF24L01_INO
+#define BUGSMINI_NRF24L01_INO
+/*#define CABELL_NRF24L01_INO
+#define CFLIE_NRF24L01_INO
+#define CG023_NRF24L01_INO
+#define CX10_NRF24L01_INO    //Include Q2X2 protocol
+#define DM002_NRF24L01_INO*/
+#define E01X_NRF24L01_INO
+
+const PPM_Parameters PPM_prot[3*NBR_BANKS]=	{
 #if NBR_BANKS > 0
 //******************************       BANK 1       ******************************
 //	Switch	Protocol 		Sub protocol	RX_Num	Power		Auto Bind		Option	Chan Order
-/*	1	*/	{PROTO_FLYSKY,	Flysky		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	2	*/	{PROTO_AFHDS2A,	PWM_IBUS	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 0
-/*	3	*/	{PROTO_AFHDS2A,	PWM_IBUS	,	1	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 1
-/*	4	*/	{PROTO_AFHDS2A,	PWM_IBUS	,	2	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 2
-/*	5	*/	{PROTO_AFHDS2A,	PWM_IBUS	,	3	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 3
-/*	6	*/	{PROTO_AFHDS2A,	PWM_IBUS	,	2	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 4
-/*	7	*/	{PROTO_AFHDS2A,	PWM_IBUS	,	3	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 5
-/*	8	*/	{PROTO_FUTABA,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// option=fine freq tuning
-/*	9	*/	{PROTO_FRSKYV,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	40	,	0x00000000 },	// option=fine freq tuning
-/*	10	*/	{PROTO_FRSKYD,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	40	,	0x00000000 },	// option=fine freq tuning
-/*	11	*/	{PROTO_FRSKYX,	CH_16		,	0	,	P_HIGH	,	NO_AUTOBIND	,	40	,	0x00000000 },	// option=fine freq tuning
-/*	12	*/	{PROTO_FRSKYX,	EU_16		,	0	,	P_HIGH	,	NO_AUTOBIND	,	40	,	0x00000000 },	// option=fine freq tuning
-/*	13	*/	{PROTO_DEVO	,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	14	*/	{PROTO_WK2x01,	WK2801		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-#endif
-#if NBR_BANKS > 1
-//******************************       BANK 2       ******************************
-//	Switch	Protocol 		Sub protocol	RX_Num	Power		Auto Bind		Option	Chan Order
-/*	1	*/	{PROTO_DSM	,	DSM2_11		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6	,	0x00000000 },	// option=number of channels
-/*	2	*/	{PROTO_DSM	,	DSM2_22		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6	,	0x00000000 },	// option=number of channels
-/*	3	*/	{PROTO_DSM	,	DSMX_11		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6	,	0x00000000 },	// option=number of channels
-/*	4	*/	{PROTO_DSM	,	DSMX_22		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6	,	0x00000000 },	// option=number of channels
-/*	5	*/	{PROTO_DSM	,	DSM2_11		,	0	,	P_HIGH	,	NO_AUTOBIND	,	8	,	0x00000000 },	// option=number of channels
-/*	6	*/	{PROTO_DSM	,	DSM2_22		,	0	,	P_HIGH	,	NO_AUTOBIND	,	8	,	0x00000000 },	// option=number of channels
-/*	7	*/	{PROTO_DSM	,	DSMX_11		,	0	,	P_HIGH	,	NO_AUTOBIND	,	8	,	0x00000000 },	// option=number of channels
-/*	8	*/	{PROTO_DSM	,	DSMX_22		,	0	,	P_HIGH	,	NO_AUTOBIND	,	8	,	0x00000000 },	// option=number of channels
-/*	9	*/	{PROTO_SLT	,	SLT_V1		,	0	,	P_HIGH	,	NO_AUTOBIND	,	6	,	0x00000000 },
-/*	10	*/	{PROTO_HUBSAN,	H107		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	11	*/	{PROTO_HUBSAN,	H301		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	12	*/	{PROTO_HUBSAN,	H501		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	13	*/	{PROTO_HISKY,	Hisky		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	14	*/	{PROTO_V2X2	,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-#endif
-#if NBR_BANKS > 2
-//******************************       BANK 3       ******************************
-//	Switch	Protocol 		Sub protocol	RX_Num	Power		Auto Bind		Option	Chan Order
-/*	1	*/	{PROTO_ESKY	,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	2	*/	{PROTO_ESKY150,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	3	*/	{PROTO_ASSAN,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	4	*/	{PROTO_CORONA,	COR_V2		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	5	*/	{PROTO_SYMAX,	SYMAX		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	6	*/	{PROTO_KN	,	WLTOYS		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	7	*/	{PROTO_BAYANG,	BAYANG		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	8	*/	{PROTO_BAYANG,	H8S3D		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	9	*/	{PROTO_BAYANG,	X16_AH		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	10	*/	{PROTO_BAYANG,	IRDRONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	11	*/	{PROTO_H8_3D,	H8_3D		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	12	*/	{PROTO_H8_3D,	H20H		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	13	*/	{PROTO_H8_3D,	H20MINI		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	14	*/	{PROTO_H8_3D,	H30MINI		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-#endif
-#if NBR_BANKS > 3
-//******************************       BANK 4       ******************************
-//	Switch	Protocol 		Sub protocol	RX_Num	Power		Auto Bind		Option	Chan Order
-/*	1	*/	{PROTO_MJXQ	,	WLH08		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	2	*/	{PROTO_MJXQ	,	X600		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	3	*/	{PROTO_MJXQ	,	X800		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	4	*/	{PROTO_MJXQ	,	H26D		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	5	*/	{PROTO_MJXQ	,	E010		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	6	*/	{PROTO_MJXQ	,	H26WH		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	7	*/	{PROTO_HONTAI,	HONTAI		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	8	*/	{PROTO_HONTAI,	JJRCX1		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	9	*/	{PROTO_HONTAI,	X5C1		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	10	*/	{PROTO_HONTAI,	FQ777_951	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	11	*/	{PROTO_Q303	,	Q303		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	12	*/	{PROTO_Q303	,	CX35		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	13	*/	{PROTO_Q303	,	CX10D		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	14	*/	{PROTO_Q303	,	CX10WD		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-#endif
-#if NBR_BANKS > 4
-//******************************       BANK 5       ******************************
-//	Switch	Protocol 		Sub protocol	RX_Num	Power		Auto Bind		Option	Chan Order
-/*	1	*/	{PROTO_CX10	,	CX10_GREEN	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	2	*/	{PROTO_CX10	,	CX10_BLUE	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	3	*/	{PROTO_CX10	,	DM007		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	4	*/	{PROTO_CX10	,	JC3015_1	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	5	*/	{PROTO_CX10	,	JC3015_2	,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	6	*/	{PROTO_CX10	,	MK33041		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	7	*/	{PROTO_Q2X2	,	Q222		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	8	*/	{PROTO_Q2X2	,	Q242		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	9	*/	{PROTO_Q2X2	,	Q282		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	10	*/	{PROTO_CG023,	CG023		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	11	*/	{PROTO_CG023,	YD829		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	12	*/	{PROTO_FQ777,	NONE		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	13	*/	{PROTO_YD717,	YD717		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
-/*	14	*/	{PROTO_MT99XX,	MT99		,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
+/*	1	*/	{PROTO_BUGSMINI,	BUGSMINI, 	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },
+/*	2	*/	{PROTO_BAYANG,	  BAYANG	 ,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 0
+/*	3	*/	{PROTO_MJXQ,	    E010	   ,	0	,	P_HIGH	,	NO_AUTOBIND	,	0	,	0x00000000 },	// RX number 0
 #endif
 };
 // RX_Num is used for TX & RX match. Using different RX_Num values for each receiver will prevent starting a model with the false config loaded...
